@@ -1,3 +1,4 @@
+
 // Função para validação do CPF
 
 function is_cpf (c) {
@@ -5,19 +6,35 @@ function is_cpf (c) {
 if((c = c.replace(/[^\d]/g,"")).length != 11)
 return false
   
-if (c == 
-"00000000000" ||
-"11111111111" ||
-"22222222222" ||
-"33333333333" ||
-"44444444444" ||
-"55555555555" ||
-"66666666666" ||
-"77777777777" ||
-"88888888888" ||
-"99999999999")
-return false
-;
+if (c == "00000000000")
+return false;
+
+if (c == "11111111111")
+return false;
+
+if (c == "22222222222")
+return false;
+
+if (c == "33333333333")
+return false;
+
+if (c == "44444444444")
+return false;
+
+if (c == "55555555555")
+return false;
+
+if (c == "66666666666")
+return false;
+
+if (c == "77777777777")
+return false;
+
+if (c == "88888888888")
+return false;
+
+if (c == "99999999999")
+return false;
 
 // Criadas as variáveis para soma e resto
 var r;
