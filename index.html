@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="description" content="Aqui tem tudo pra você. Realize o seu cadastro e faça parte!">
@@ -7,107 +8,172 @@
 	<meta name="author" content="Wybson Santana">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Formulário de cadastro | Programa Formação Tech Itaú</title>
-	<link rel="preconnect" href="https://fonts.gstatic.com"> 
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap"
+		rel="stylesheet">
 	<link rel="stylesheet" href="css\style.css">
 	<script type="text/javascript" src="script\script.js"></script>
 </head>
+
 <body>
-<header class="header">
-<img src="pictures\logo.png" alt="Logotipo de um formulário de cadastro." />
-<nav>
-<h1>Faça o seu cadastro e junte-se a nós!</h1>
-</nav>
-</header>
-<main>
-<section>
-<br>
-<h2>É rápido, simples e fácil.<br>Preencha o formulário abaixo!</h2>
-<br>
-<div class="form-container">
-<form id="myForm">
-<fieldset>
-<legend><h3>Dados pessoais</h3></legend>
-<br>
-<label for="name"><h4>Nome: <sup>*</sup></h4></label><br>
-<input id="name" type="text" name="name" size="30" maxlength="28" placeholder="Digite o seu nome" title="Use somente letras maiusculas e minúsculas!" pattern="[A-Za-z çáâãéêíóôúü]+" required="required" />
-<br>
-<label for="last-name"><h4>Sobrenome: <sup>*</sup></h4></label><br>
-<input id="last-name" type="text" name="last-name" size="30" maxlength="28" placeholder="Digite o seu sobrenome" title="Use somente letras maiúsculas e minúsculas!" pattern="[A-Za-z çáãéêéóôúü]+" required="required" />
-<br>
-<label for="cpf"><h4>CPF: <sup>*</sup></h4></label><br>
-<input id="cpf" type="text" name="cpf" size="16" maxlength="14" placeholder="Número do CPF" onblur="cpfCheck(this)" onkeydown="javascript: fMasc( this, mCPF );" required="required" />
-<br>
-<label for="rg"><h4>RG:</h4></label><br>
-<input id="rg" type="text" name="rg" size="16" maxlength="14" placeholder="Número do RG" title="Use apenas números e hífen!" pattern="[0-9]{2,}-[0-9]{1}" />
-<br>
-<h4>Sexo:</h4><br>
-<input id="female" type="radio" name="gender" value="female" title="Feminino" />
-<label for="female">Feminino</label>
-<br>
-<input id="male" type="radio" name="gender" value="male" />
-<label for="male">Masculino</label> 
-</fieldset>
-<br>
-<fieldset>
-<legend><h3>Informações de contato</h3></legend>
-<br>
-<label for="email"><h4>E-mail: <sup>*</sup></h4></label><br>
-<input id="email" type="email" name="email" size="30" maxlength="28" placeholder="email@exemplo.com.br" title="Use somente letras minúsculas, ponto, @, -, _, e %! e (.)!" pattern="[a-z_.@%-]+" required="required" /> 
-<br>
-<label for="cellphone"><h4>Telefone celular: <sup>*</sup></h4></label><br>
-<input id="cellphone" type="text" name="cellphone" size="16" maxlength="15" placeholder="Nº de celular" title="Utilize o exemplo: (99) 99876-5432!" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" required="required" />
-<br>
-<label for="phone"><h4>Telefone fixo:</h4></label><br>
-<input id="phone" type="text" name="phone" size="16" maxlength="14" placeholder="Nº do telefone" title="Utilize o exemplo: (99) 2345-6789!" pattern="\([0-9]{2}\) [0-9]{4}-[0-9]{4}" />
-</fieldset>
-<br>
-<fieldset>
-<legend><h3>Endereço</h3></legend><br>
-<label for="cep"><h4>CEP: <sup>*</sup></h4></label><br>
-<input id="cep" type="text" name="cep" size="10" maxlength="9" placeholder="00000-000" onblur="pesquisacep(this.value);" pattern="[0-9]{5}-[0-9]{3}+" required="required" />
-<br>
-<label for="street"><h4>Logradouro: <sup>*</sup></h4></label><br>
-<input id="street" type="text" name="street" size="30" maxlength="28" placeholder="Informe o seu endereço!" title="Use letras maiúsculas, minúsculas, números, ponto, vírgula e hífen!" pattern="[A-Za-z0-9 çáâãéêíóôúü,.-]+" />
-<br>
-<label for="street-number"><h4>Nº: <sup>*</sup></h4></label><br>
-<input id="street-number" type="text" name="street-number" size="10" maxlength="6" placeholder="Número" title="Use somente números!" pattern="[0-9]+" required="required" />
-<br>
-<label for="complement"><h4>Complemento:</h4></label><br>
-<input id="complement" type="text" name="complement" size="20" maxlength="18" placeholder="Inform um complemento!" title="Use letras maiúsculas, minúsculas, números, ponto, vírgula e hífen!" pattern="[A-Za-z0-9 çáâãéêíóôúü,.-]+" />
-<br>
-<label for="district"><h4>Bairro: <sup>*</sup></h4></label><br>
-<input id="district" type="text" name="district" size="20" maxlength="18" placeholder="Informe o seu bairro!" title="Use letras maiúsculas, minúsculas, números, ponto, vírgula e hífen!" pattern="[A-Za-z0-9 çáâãéêíóôúü,.-]+" required="required" />
-<br>
-<label for="city"><h4>Cidade: <sup>*</sup></h4></label><br>
-<input id="city" type="text" name="city" size="20" maxlength="18" placeholder="Nome da cidade" readonly />
-<br>
-<label for="state"><h4>Estado: <sup>*</sup></h4></label><br>
-<input id="state" type="text" name="state" size="2" maxlength="2" placeholder="UF" readonly />
-</fieldset>
-<br>
-<br>
-<div class="form-button">
-<input id="send" type="submit" value="Cadastrar" onclick="formCheck()" />
-<input type="reset" value="Limpar campos">
-</div>
-</form>
-</div>
-</section>
-</main>
-<br>
-<footer class="footer">
-<div class="copyright">
-&#169; 2021 - Todos os direitos reservados
-</div>
-<ul class="footer-links">
-<li>
-<a title="Programa Formação Tech itaú" target="_blank" href="https://itautech.gama.academy/">Programa Formação Tech Itaú</a></li>
-<li> | </li>
-<li><a title="Gama Academy" target="_blank" href="https://www.gama.academy/">Gama Academy</a></li>
-<li> | </li>
-<li><a title="Wybson Santana no Linkedin" target="_blank" href="https://www.linkedin.com/in/wybsonsantana">Wybson Santana</a></li>
-</ul>
-</footer>
+	<header class="header">
+		<img src="pictures\logo.png" alt="Logotipo de um formulário de cadastro." />
+		<nav>
+			<h1>Faça o seu cadastro e junte-se a nós!</h1>
+		</nav>
+	</header>
+	<main>
+		<section>
+			<br>
+			<h2>É rápido, simples e fácil.<br>Preencha o formulário abaixo!</h2>
+			<br>
+			<div class="form-container">
+				<form id="myForm">
+					<fieldset>
+						<legend>
+							<h3>Dados pessoais</h3>
+						</legend>
+						<br>
+						<label for="name">
+							<h4>Nome: <sup>*</sup></h4>
+						</label><br>
+						<input id="name" type="text" name="name" size="30" maxlength="28"
+							placeholder="Digite o seu nome" title="Use somente letras maiusculas e minúsculas!"
+							pattern="[A-Za-z çáâãéêíóôúü]+" required="required" />
+						<br>
+						<label for="last-name">
+							<h4>Sobrenome: <sup>*</sup></h4>
+						</label><br>
+						<input id="last-name" type="text" name="last-name" size="30" maxlength="28"
+							placeholder="Digite o seu sobrenome" title="Use somente letras maiúsculas e minúsculas!"
+							pattern="[A-Za-z çáãéêéóôúü]+" required="required" />
+						<br>
+						<label for="cpf">
+							<h4>CPF: <sup>*</sup></h4>
+						</label><br>
+						<input id="cpf" type="text" name="cpf" size="16" maxlength="14" placeholder="Número do CPF"
+							onblur="cpfCheck(this)" onkeydown="javascript: fMasc( this, mCPF );" required="required" />
+						<br>
+						<label for="rg">
+							<h4>RG:</h4>
+						</label><br>
+						<input id="rg" type="text" name="rg" size="16" maxlength="14" placeholder="Número do RG"
+							title="Use apenas números e hífen!" pattern="[0-9]{2,}-[0-9]{1}" />
+						<br>
+						<h4>Sexo:</h4><br>
+						<input id="female" type="radio" name="gender" value="female" title="Feminino" />
+						<label for="female">Feminino</label>
+						<br>
+						<input id="male" type="radio" name="gender" value="male" />
+						<label for="male">Masculino</label>
+					</fieldset>
+					<br>
+					<fieldset>
+						<legend>
+							<h3>Informações de contato</h3>
+						</legend>
+						<br>
+						<label for="email">
+							<h4>E-mail: <sup>*</sup></h4>
+						</label><br>
+						<input id="email" type="email" name="email" size="30" maxlength="28"
+							placeholder="email@exemplo.com.br"
+							title="Use somente letras minúsculas, ponto, @, -, _, e %! e (.)!" pattern="[a-z_.@%-]+"
+							required="required" />
+						<br>
+						<label for="cellphone">
+							<h4>Telefone celular: <sup>*</sup></h4>
+						</label><br>
+						<input id="cellphone" type="text" name="cellphone" size="16" maxlength="15"
+							placeholder="Nº de celular" title="Utilize o exemplo: (99) 99876-5432!"
+							pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" required="required" />
+						<br>
+						<label for="phone">
+							<h4>Telefone fixo:</h4>
+						</label><br>
+						<input id="phone" type="text" name="phone" size="16" maxlength="14" placeholder="Nº do telefone"
+							title="Utilize o exemplo: (99) 2345-6789!" pattern="\([0-9]{2}\) [0-9]{4}-[0-9]{4}" />
+					</fieldset>
+					<br>
+					<fieldset>
+						<legend>
+							<h3>Endereço</h3>
+						</legend><br>
+						<label for="cep">
+							<h4>CEP: <sup>*</sup></h4>
+						</label><br>
+						<input id="cep" type="text" name="cep" size="10" maxlength="9" placeholder="00000-000"
+							onblur="pesquisacep(this.value);" pattern="[0-9]{5}-[0-9]{3}+" required="required" />
+						<br>
+						<label for="street">
+							<h4>Logradouro: <sup>*</sup></h4>
+						</label><br>
+						<input id="street" type="text" name="street" size="30" maxlength="28"
+							placeholder="Informe o seu endereço!"
+							title="Use letras maiúsculas, minúsculas, números, ponto, vírgula e hífen!"
+							pattern="[A-Za-z0-9 çáâãéêíóôúü,.-]+" />
+						<br>
+						<label for="street-number">
+							<h4>Nº: <sup>*</sup></h4>
+						</label><br>
+						<input id="street-number" type="text" name="street-number" size="10" maxlength="6"
+							placeholder="Número" title="Use somente números!" pattern="[0-9]+" required="required" />
+						<br>
+						<label for="complement">
+							<h4>Complemento:</h4>
+						</label><br>
+						<input id="complement" type="text" name="complement" size="20" maxlength="18"
+							placeholder="Inform um complemento!"
+							title="Use letras maiúsculas, minúsculas, números, ponto, vírgula e hífen!"
+							pattern="[A-Za-z0-9 çáâãéêíóôúü,.-]+" />
+						<br>
+						<label for="district">
+							<h4>Bairro: <sup>*</sup></h4>
+						</label><br>
+						<input id="district" type="text" name="district" size="20" maxlength="18"
+							placeholder="Informe o seu bairro!"
+							title="Use letras maiúsculas, minúsculas, números, ponto, vírgula e hífen!"
+							pattern="[A-Za-z0-9 çáâãéêíóôúü,.-]+" required="required" />
+						<br>
+						<label for="city">
+							<h4>Cidade: <sup>*</sup></h4>
+						</label><br>
+						<input id="city" type="text" name="city" size="20" maxlength="18" placeholder="Nome da cidade"
+							readonly />
+						<br>
+						<label for="state">
+							<h4>Estado: <sup>*</sup></h4>
+						</label><br>
+						<input id="state" type="text" name="state" size="2" maxlength="2" placeholder="UF" readonly />
+					</fieldset>
+					<br>
+					<br>
+					<div class="form-button">
+						<input id="send" type="submit" value="Cadastrar" onclick="formCheck()" />
+						<input type="reset" value="Limpar campos">
+					</div>
+				</form>
+			</div>
+		</section>
+	</main>
+	<br>
+	<footer class="footer">
+		<div class="copyright">
+			&#169; 2021 - Todos os direitos reservados
+		</div>
+		<ul class="footer-links">
+			<li>
+				<a title="Programa Formação Tech itaú" target="_blank" href="https://itautech.gama.academy/">Programa
+					Formação Tech Itaú</a>
+			</li>
+			<li> | </li>
+			<li><a title="Gama Academy" target="_blank" href="https://www.gama.academy/">Gama Academy</a></li>
+			<li> | </li>
+			<li><a title="Wybson Santana no Linkedin" target="_blank"
+					href="https://www.linkedin.com/in/wybsonsantana">Wybson Santana</a></li>
+		</ul>
+	</footer>
 </body>
+
 </html>
